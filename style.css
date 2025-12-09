@@ -7,6 +7,8 @@
   --border-color: #000000;
   --accent-color: #ff4757;
   --accent-light: #ffebee;
+  --accent-secondary: #00d2d3;
+  --accent-tertiary: #ffa502;
 
   --font-family-primary: "Courier New", monospace;
   --font-family-secondary: Arial, sans-serif;
@@ -101,7 +103,9 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 100;
-  transition: background-color var(--transition);
+  transition: background-color var(--transition), box-shadow var(--transition);
+  /* Added shadow for depth */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .header-content {
@@ -119,6 +123,18 @@ a:hover {
   letter-spacing: 0.15em;
   border: var(--border-width) var(--border-style) var(--border-color);
   padding: var(--spacing-xs) var(--spacing-sm);
+  /* Added gradient background and text effect */
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-tertiary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+  transition: all var(--transition);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(255, 71, 87, 0.5);
 }
 
 .nav-desktop {
@@ -140,11 +156,14 @@ a:hover {
   padding: var(--spacing-xs) var(--spacing-sm);
   cursor: pointer;
   font-size: 1.2rem;
-  transition: background-color var(--transition);
+  transition: all var(--transition);
+  /* Added background gradient on hover */
 }
 
 .theme-toggle:hover {
-  background-color: var(--accent-light);
+  background: linear-gradient(135deg, var(--accent-secondary), var(--accent-color));
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 210, 211, 0.4);
 }
 
 .menu-toggle {
@@ -193,6 +212,8 @@ a:hover {
   padding: var(--spacing-xl) var(--spacing-lg);
   text-align: center;
   border-bottom: var(--border-width) var(--border-style) var(--border-color);
+  /* Added subtle gradient background */
+  background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary));
 }
 
 .hero-content {
@@ -205,13 +226,20 @@ a:hover {
   font-size: 4rem;
   letter-spacing: 0.08em;
   animation: fadeInDown 0.6s ease-out;
+  /* Added gradient text effect */
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-subtitle {
   font-size: 1.3rem;
   margin-bottom: var(--spacing-lg);
-  color: var(--text-secondary);
+  color: var(--accent-secondary);
   animation: fadeInUp 0.6s ease-out;
+  /* Added text glow effect */
+  text-shadow: 0 0 10px rgba(0, 210, 211, 0.3);
 }
 
 .iframe-container {
@@ -230,8 +258,10 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-secondary);
+  background: linear-gradient(135deg, var(--bg-secondary), var(--accent-light));
   gap: var(--spacing-md);
+  /* Added shadow and rounded effect */
+  box-shadow: inset 0 0 20px rgba(255, 71, 87, 0.1);
 }
 
 #gameFrame {
@@ -315,6 +345,7 @@ a:hover {
   margin-bottom: var(--spacing-lg);
 }
 
+/* Game Cards */
 .game-card {
   border: var(--border-width) var(--border-style) var(--border-color);
   padding: var(--spacing-lg);
@@ -322,11 +353,33 @@ a:hover {
   cursor: pointer;
   transition: all var(--transition);
   background-color: var(--bg-primary);
+  /* Added shadow and gradient effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.game-card::before {
+  /* Added decorative gradient overlay */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 210, 211, 0.2), transparent);
+  transition: left var(--transition);
 }
 
 .game-card:hover {
-  background-color: var(--accent-light);
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--accent-light), var(--bg-primary));
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(255, 71, 87, 0.3);
+  border-color: var(--accent-color);
+}
+
+.game-card:hover::before {
+  left: 100%;
 }
 
 .card-icon {
@@ -339,10 +392,11 @@ a:hover {
   letter-spacing: 0.05em;
 }
 
+/* Buttons */
 .btn-primary {
-  background-color: var(--text-primary);
-  color: var(--bg-primary);
-  border: var(--border-width) var(--border-style) var(--text-primary);
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-tertiary));
+  color: #ffffff;
+  border: var(--border-width) var(--border-style) var(--accent-color);
   padding: var(--spacing-sm) var(--spacing-md);
   font-family: var(--font-family-secondary);
   font-weight: bold;
@@ -352,12 +406,13 @@ a:hover {
   display: block;
   margin: 0 auto;
   transition: all var(--transition);
+  /* Added shadow effect */
+  box-shadow: 0 4px 12px rgba(255, 71, 87, 0.3);
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 71, 87, 0.5);
 }
 
 /* Features Section */
@@ -372,17 +427,39 @@ a:hover {
   gap: var(--spacing-lg);
 }
 
+/* Feature Boxes */
 .feature-box {
   border: var(--border-width) var(--border-style) var(--border-color);
   padding: var(--spacing-lg);
   text-align: center;
-  background-color: var(--bg-secondary);
+  background: linear-gradient(135deg, var(--bg-secondary), var(--accent-light));
+  transition: all var(--transition);
+  /* Added shadow and border glow */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.feature-box::after {
+  /* Added accent border highlight */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary), var(--accent-tertiary));
   transition: all var(--transition);
 }
 
 .feature-box:hover {
-  background-color: var(--accent-light);
-  transform: scale(1.02);
+  background: linear-gradient(135deg, var(--accent-light), var(--accent-secondary));
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 10px 25px rgba(255, 71, 87, 0.25);
+  border-color: var(--accent-secondary);
+}
+
+.feature-box:hover::after {
+  height: 6px;
 }
 
 .feature-icon {
@@ -414,19 +491,36 @@ a:hover {
   margin-bottom: var(--spacing-xl);
 }
 
+/* Timeline Steps */
 .timeline-step {
   border: var(--border-width) var(--border-style) var(--border-color);
   padding: var(--spacing-lg);
   text-align: center;
-  background-color: var(--bg-secondary);
+  background: linear-gradient(135deg, var(--bg-secondary), var(--accent-light));
+  /* Added shadow and transition effects */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition);
+  position: relative;
+}
+
+.timeline-step:hover {
+  background: linear-gradient(135deg, var(--accent-secondary), var(--bg-secondary));
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 210, 211, 0.2);
+  border-color: var(--accent-secondary);
 }
 
 .step-number {
   font-size: 2rem;
   font-weight: bold;
-  color: var(--accent-color);
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-tertiary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: var(--spacing-sm);
   font-family: var(--font-family-secondary);
+  /* Added glow effect to step numbers */
+  filter: drop-shadow(0 0 4px rgba(255, 71, 87, 0.4));
 }
 
 .timeline-step h3 {
@@ -447,16 +541,13 @@ a:hover {
 
 /* Footer */
 .footer {
-  background-color: var(--bg-secondary);
+  background: linear-gradient(180deg, var(--bg-secondary), var(--bg-primary));
   padding: var(--spacing-lg);
+  /* Added top shadow */
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.footer-divider {
-  height: var(--border-width);
-  background-color: var(--border-color);
-  margin-bottom: var(--spacing-lg);
-}
-
+/* Removed .footer-divider - removed margin-bottom from footer-content */
 .footer-content {
   max-width: 1400px;
   margin: 0 auto var(--spacing-lg);
@@ -466,6 +557,8 @@ a:hover {
   border-left: var(--border-width) var(--border-style) var(--border-color);
   border-right: var(--border-width) var(--border-style) var(--border-color);
   padding: var(--spacing-lg);
+  /* Added subtle shadow to footer grid */
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .footer-column h4 {
@@ -510,19 +603,23 @@ a:hover {
 .btn-subscribe {
   padding: var(--spacing-sm);
   border: var(--border-width) var(--border-style) var(--border-color);
-  background-color: var(--text-primary);
-  color: var(--bg-primary);
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-tertiary));
+  color: #ffffff;
   font-family: var(--font-family-secondary);
   font-weight: bold;
   cursor: pointer;
   transition: all var(--transition);
   font-size: 0.9rem;
   letter-spacing: 0.05em;
+  /* Added shadow effect */
+  box-shadow: 0 4px 10px rgba(255, 71, 87, 0.3);
 }
 
 .btn-subscribe:hover {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
+  background: linear-gradient(135deg, var(--accent-secondary), var(--accent-color));
+  border-color: var(--accent-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 210, 211, 0.4);
 }
 
 .social-links {
@@ -536,6 +633,17 @@ a:hover {
   padding: var(--spacing-xs) var(--spacing-sm);
   font-size: 0.85rem;
   font-weight: bold;
+  transition: all var(--transition);
+  /* Added shadow and gradient effect */
+  background: var(--bg-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.social-links a:hover {
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 71, 87, 0.3);
+  transform: translateY(-2px);
 }
 
 .footer-bottom {
