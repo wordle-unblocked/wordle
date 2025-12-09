@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORD GAMES - Wordle Unblocked</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">WORD GAMES</div>
+            <nav class="nav-desktop">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#all-games" class="nav-link">All Games</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                <span class="toggle-icon">☀</span>
+            </button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <nav class="nav-mobile" id="mobileMenu">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#all-games" class="nav-link">All Games</a>
+            <a href="#about" class="nav-link">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">WORDLE UNBLOCKED</h1>
+                <p class="hero-subtitle">Play the classic word game anywhere</p>
+                <div class="iframe-container">
+                    <div class="iframe-placeholder" id="iframeLoading">
+                        <div class="loading-spinner"></div>
+                        <p>Wordle Game Loading...</p>
+                    </div>
+                    <iframe id="gameFrame" src="" title="Wordle Game" style="display: none;"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Games Section -->
+        <section class="all-games" id="all-games">
+            <div class="section-header">
+                <h2>ALL WORD GAMES</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="card-icon">▢</div>
+                    <h3>ANAGRAM HUNT</h3>
+                </div>
+                <div class="game-card">
+                    <div class="card-icon">⊞</div>
+                    <h3>WORD SEARCH</h3>
+                </div>
+                <div class="game-card">
+                    <div class="card-icon">◊</div>
+                    <h3>CROSSWORD</h3>
+                </div>
+                <div class="game-card">
+                    <div class="card-icon">⬚</div>
+                    <h3>LETTER MATCH</h3>
+                </div>
+                <div class="game-card">
+                    <div class="card-icon">▭</div>
+                    <h3>WORD TILES</h3>
+                </div>
+                <div class="game-card">
+                    <div class="card-icon">◇</div>
+                    <h3>SPELLING BEE</h3>
+                </div>
+                <div class="game-card">
+                    <div class="card-icon">⊟</div>
+                    <h3>WORD CHAIN</h3>
+                </div>
+                <div class="game-card">
+                    <div class="card-icon">▫</div>
+                    <h3>VOCABULARY</h3>
+                </div>
+            </div>
+            <button class="btn-primary">VIEW ALL GAMES</button>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="section-header">
+                <h2>FEATURES</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">📚</div>
+                    <h3>466K+ WORDS</h3>
+                    <p>Comprehensive dictionary from word.txt database</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🔓</div>
+                    <h3>NO RESTRICTIONS</h3>
+                    <p>Unblocked games accessible anywhere, anytime</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">⚡</div>
+                    <h3>INSTANT PLAY</h3>
+                    <p>No downloads required, play in your browser</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <div class="section-header">
+                <h2>HOW IT WORKS</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-step">
+                    <div class="step-number">01</div>
+                    <h3>CHOOSE GAME</h3>
+                    <p>Select from our collection of word games</p>
+                </div>
+                <div class="timeline-connector">→</div>
+                <div class="timeline-step">
+                    <div class="step-number">02</div>
+                    <h3>FETCH WORDS</h3>
+                    <p>Loads from 466k word dictionary</p>
+                </div>
+                <div class="timeline-connector">→</div>
+                <div class="timeline-step">
+                    <div class="step-number">03</div>
+                    <h3>PLAY UNLIMITED</h3>
+                    <p>No limits, no ads, pure gameplay</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-divider"></div>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>ABOUT</h4>
+                <p>Word Games is your gateway to unlimited word gaming. Play anywhere, anytime with our unblocked collection.</p>
+            </div>
+            <div class="footer-column">
+                <h4>PAGES</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Games</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>SUBSCRIBE</h4>
+                <form class="subscribe-form" id="subscribeForm">
+                    <input type="email" placeholder="Enter your email" required aria-label="Email address">
+                    <button type="submit" class="btn-subscribe">SUBSCRIBE</button>
+                </form>
+            </div>
+            <div class="footer-column">
+                <h4>CONNECT</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub">⌗ GH</a>
+                    <a href="#" aria-label="Twitter">✕ TW</a>
+                    <a href="#" aria-label="Discord">◎ DC</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 WORD GAMES | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
